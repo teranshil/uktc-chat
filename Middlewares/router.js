@@ -1,0 +1,10 @@
+'use strict';
+var accountController = require('../Controllers/accountController');
+var express = require('express');  
+var router = express.Router();
+router.get('/', accountController.login);
+router.post('/login', accountController.doLogin);
+router.post('/register', accountController.doRegister);
+router.get('/register', accountController.register);
+router.post('/anonymous', accountController.anonymous);	
+module.exports = router;
