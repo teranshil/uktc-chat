@@ -1,0 +1,4 @@
+profile (id(int), username(int), password (md5, varchar), email)
+chatrooms (id(int), createdAt(dateTime), updatedAt(dateTime), profiles_Id(int), anonymous_Id(int), name)
+anonymous(id(int), name(varchar))
+messages(id(int), chatroom_Id, profiles_Id, anonymous_Id, createdAt, text)
