@@ -67,7 +67,7 @@ CREATE TABLE `messages` (
 -- Table structure for table `profile`
 --
 
-CREATE TABLE `profile` (
+CREATE TABLE `profiles` (
   `id` int(5) NOT NULL,
   `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
