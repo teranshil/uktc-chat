@@ -6,6 +6,7 @@ queries = {
     getEmai: "SELECT email FROM profiles WHERE email = ?",
     getUsername: "SELECT username FROM profiles WHERE username = ?",
     createUser: "INSERT INTO profiles (username, password, salt, email) VALUES ?",
+    createRoom: "INSERT INTO chatrooms (name) VALUES ?",
     getData: "SELECT ? FROM ? WHERE ? = ?"
 }
 
@@ -55,4 +56,10 @@ exports.createUser = (username, password, salt, email) => {
     });
 }
 
+exports.createRoom = (name) => {
+    makeQuery(queries.createRoom, name, (err, res) => {
+        if (err) console.log(err);
+        console.log(res);
+    });
+}
 module.exports

@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var accountController = require('../controllers/accountController');
+var chatRoomController = require('../controllers/chatRoomController');
 var views = '../views/';
 
 router.get('/', function(req, res) {
@@ -16,6 +17,7 @@ router.get('/register', function(req, res) {
 //Handle POST requests
 router.post('/register', accountController.register);	 // On submit the register form
 
+router.post('/chatrooms/create', chatRoomController.createRoom);
 
 // 404 NOT FOUND
 router.get('*', function(req, res) {
