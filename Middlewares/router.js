@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var accountController = require('../controllers/accountController');
-var chatRoomController = require('../controllers/chatRoomController');
+var chatroomsController = require('../controllers/chatroomsController');
 var views = '../views/';
 
 router.get('/', function(req, res) {
@@ -14,10 +14,18 @@ router.get('/register', function(req, res) {
 
 });
 
+router.get('/chatrooms/:id', chatroomsController.index);
+router.post('/chatrooms/sendMessage', chatroomsController.sendMessage);
+router.post('/chatrooms/createRoom', chatroomsController.createRoom);
+router.post('/chatrooms/sendInvitation', chatroomsController.sendInvitation);
+ 
+
+router.get('/anonymous', function(req, res) {
+    res.render(views + 'anonymous/index');
+});
 //Handle POST requests
 router.post('/register', accountController.register);	 // On submit the register form
 
-router.post('/chatrooms/create', chatRoomController.createRoom);
 
 // 404 NOT FOUND
 router.get('*', function(req, res) {
