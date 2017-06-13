@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var router = require('./Middlewares/router');	//include router
 var hbs = require('hbs');
 const config = require('./config');
-
+app.use(express.static('./views'));
 //support parsing of application/json type post data
 app.use(bodyParser.json());
 
